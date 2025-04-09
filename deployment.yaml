@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: containerwebapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: containerwebapp
+  template:
+    metadata:
+      labels:
+        app: containerwebapp
+    spec:
+      containers:
+        - name: containerwebapp
+          image: shijingwei259/containerwebapp
+          ports:
+            - containerPort: 2000
